@@ -9,7 +9,7 @@ Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
 
 def main():
     """ Calls the other functions to test them. """
-    run_test_multiply_numbers()
+    #run_test_multiply_numbers()
     run_test_sum_numbers()
     run_test_print_characters()
     run_test_print_characters_slanted()
@@ -138,7 +138,7 @@ def multiply_numbers(sequence_of_lists):
 def run_test_sum_numbers():
     """ Tests the    sum_numbers    function. """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement this TEST function.
+    # done: 3. Implement this TEST function.
     #   It TESTS the  sum_numbers  function defined below.
     #   Include at least **   3   ** tests (we wrote two for you).
     # ------------------------------------------------------------------
@@ -158,6 +158,9 @@ def run_test_sum_numbers():
     print('Expected and actual are:', expected, answer)
 
     # TO DO 3 (continued): Add your ADDITIONAL test(s) here:
+    expected = 0
+    answer = sum_numbers(([1,2,3], [-1,-2,-3], []))
+    print('Expected and actual are:', expected, answer)
 
 
 def sum_numbers(seq_seq):
@@ -171,9 +174,15 @@ def sum_numbers(seq_seq):
                     and each item in the subsequences is a number.
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # done 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
+    total = 0
+    for i in range(len(seq_seq)):
+        sublist = seq_seq[i]
+        for j in range (len(sublist)):
+            total = total + sublist[j]
+    return total
 
 
 def run_test_print_characters():
@@ -222,10 +231,14 @@ def print_characters(sequence_of_strings):
     Precondition:  the given argument is a sequence of strings.
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # done: 5. Implement and test this function.
     #  ** READ THE TESTS that have been written for you (ABOVE).
     #  ** ASK QUESTIONS if you do not understand the TESTS (ABOVE).
     # ------------------------------------------------------------------
+    for i in range(len(sequence_of_strings)):
+        sublist = sequence_of_strings[i]
+        for j in range(len(sublist)):
+            print(sublist[j])
 
 
 def run_test_print_characters_slanted():
@@ -275,13 +288,17 @@ def print_characters_slanted(sequence_of_strings):
     Precondition:  the given argument is a sequence of strings.
     """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # done: 6. Implement and test this function.
     #  ** READ THE TESTS that have been written for you (ABOVE).
     #  ** ASK QUESTIONS if you do not understand the TESTS (ABOVE).
     #
     # ** HINT: ** Consider using string multiplication for the spaces
     #             and string addition to stitch the spaces to the character.
     # ------------------------------------------------------------------
+    for i in range(len(sequence_of_strings)):
+        sublist = sequence_of_strings[i]
+        for j in range(len(sublist)):
+            print((j*' ' + sublist[j]))
 
 
 # ----------------------------------------------------------------------

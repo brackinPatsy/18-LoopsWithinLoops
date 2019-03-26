@@ -104,6 +104,12 @@ def sequence_of_sequence_example(sequence_of_lists):
         for k in range(len(sublist)):
             sublist[k] = sublist[k] * (j + 1)
 
+    for j in range(len(sequence_of_lists)):
+
+        sublist = sequence_of_lists[j]
+
+        for k in range(len(sublist)):
+            print('j= ', j, 'k= ', k, 'value of sublist ', sublist[k])
 
 def sequence_of_sequence_example2(sequence_of_lists):
     """ Same as previous example, but slightly different notation. """
